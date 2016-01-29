@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+   "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+   "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+
+   <definition name="MyLayout" template="/MyLayout.jsp">
+      <put-attribute name="pageTitle" value= "/Template"/>
+      <put-attribute name="header" value="/banner.jsp"/>
+      <put-attribute name="menu" value="/menu.jsp"/>
+      <put-attribute name="body" value="/index.jsp"/>
+      <put-attribute name="footer" value="/footer.jsp"/>
+   </definition>
+		
+   <definition name="index" template="/MyLayout.jsp">
+      <put-attribute name="pageTitle" value="Welcome to GMU Student Survey"/>
+      <put-attribute name="header" value="/banner.jsp"/>
+      <put-attribute name="menu" value="/menu.jsp"/>
+      <put-attribute name="body" value="/index.jsp"/>
+      <put-attribute name="footer" value="/footer.jsp"/>
+   </definition>
+   
+   <definition name="Survey" extends="MyLayout">
+      <put-attribute name="pageTitle" value="Survey page"/>
+      <put-attribute name="header" value="/banner.jsp"/>
+      <put-attribute name="menu" value="/menu.jsp"/>
+      <put-attribute name="body" value="/Survey.jsp"/>
+      <put-attribute name="footer" value="/footer.jsp"/>
+   </definition>
+   
+      <definition name="ListSurvey" template="/MyLayout.jsp">
+      <put-attribute name="pageTitle" value="Student Survey Data"/>
+      <put-attribute name="header" value="/banner.jsp"/>
+      <put-attribute name="menu" value="/menu.jsp"/>
+      <put-attribute name="body" value="/ListSurvey.jsp"/>
+      <put-attribute name="footer" value="/footer.jsp"/>
+   </definition>
+   
+         <definition name="SearchResults" template="/MyLayout.jsp">
+      <put-attribute name="pageTitle" value="Search Results"/>
+      <put-attribute name="header" value="/banner.jsp"/>
+      <put-attribute name="menu" value="/menu.jsp"/>
+      <put-attribute name="body" value="/SearchResults.jsp"/>
+      <put-attribute name="footer" value="/footer.jsp"/>
+   </definition>
+   
+      <definition name="Search" template="/MyLayout.jsp">
+      <put-attribute name="pageTitle" value="Search"/>
+      <put-attribute name="header" value="/banner.jsp"/>
+      <put-attribute name="menu" value="/menu.jsp"/>
+      <put-attribute name="body" value="/Search.jsp"/>
+      <put-attribute name="footer" value="/footer.jsp"/>
+   </definition>
+   
+      <definition name="Congrats" template="/MyLayout.jsp">
+      <put-attribute name="pageTitle" value="Congrats"/>
+      <put-attribute name="header" value="/banner.jsp"/>
+      <put-attribute name="menu"   value="/menu.jsp"/>
+      <put-attribute name="body"   value="/Congrats.jsp"/>
+      <put-attribute name="footer"   value="/footer.jsp"/>
+   </definition>
+   
+      <definition name="Thanks" template="/MyLayout.jsp">
+      <put-attribute name="pageTitle" value="Thanks"/>
+      <put-attribute name="header" value="/banner.jsp"/>
+      <put-attribute name="menu"   value="/menu.jsp"/>
+      <put-attribute name="body"   value="/Thanks.jsp"/>
+      <put-attribute name="footer"   value="/footer.jsp"/>
+   </definition>
+      
+     <definition name="NoResultsFound" template="/MyLayout.jsp">
+      <put-attribute name="pageTitle" value="No Results Found"/>
+      <put-attribute name="header" value="/banner.jsp"/>
+      <put-attribute name="menu"   value="/menu.jsp"/>
+      <put-attribute name="body"   value="/NoResultsFound.jsp"/>
+      <put-attribute name="footer"   value="/footer.jsp"/>
+   </definition>
+     
+</tiles-definitions>

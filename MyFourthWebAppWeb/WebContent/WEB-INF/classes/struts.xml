@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+  <constant name="struts.devMode" value="true" />
+  <package name="default" namespace="/" extends="tiles-default">
+    <result-types>
+    <result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+    </result-types>
+       
+     <action name="index">
+     <result type="tiles">index</result>
+     </action>
+    
+    <action name="startSurvey" class="org.apache.struts.hw4.action.ActionClass" method="execute">
+    <result name="success" type="tiles">Survey</result>
+    <interceptor-ref name="validation">
+    <param name="excludeMethods">execute</param>
+	</interceptor-ref>
+    </action> 
+     
+    <action name="fetchSurveyData" class="org.apache.struts.hw4.action.ActionClass" method="retrieveSurveyData">
+    <result name="success" type="tiles">ListSurvey</result>
+    <interceptor-ref name="validation">
+    <param name="excludeMethods">retrieveSurveyData</param>
+	</interceptor-ref>
+    </action>
+    
+    <action name="startSearch" class="org.apache.struts.hw4.action.SearchAction">
+    <result name="success" type="tiles">Search</result>
+    </action>
+    
+    <action name="searchSurvey" class="org.apache.struts.hw4.action.SearchAction" method="searchSurvey">
+    <result name="success" type="tiles">SearchResults</result>
+    <result name="error" type="tiles">NoResultsFound</result>
+	<result name="input" type="tiles">Search</result>    
+    </action>
+    
+    <action name="submitSurvey" class="org.apache.struts.hw4.action.ActionClass" method="saveSurveyData">
+    <result name="winner" type="tiles">Congrats</result>
+    <result name="loser" type="tiles">Thanks</result>
+    <result name="input" type="tiles">Survey</result>
+	</action>  
+	
+	<action name="deleteRecord" class="org.apache.struts.hw4.action.DeleteAction" method="deleteRecord">
+    <result name="success" type="tiles">SearchResults</result>
+    <result name="error" type="tiles">SearchResults</result>
+    <result name="input" type="tiles">SearchResults</result>
+	</action>      
+       
+  </package>
+</struts>
